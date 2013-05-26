@@ -1,4 +1,6 @@
 Pvariable::Application.routes.draw do
+  devise_for :users
+
   get 'about' => 'pages#about'
   # almost like hashing key => value
   root :to => 'pages#home'
