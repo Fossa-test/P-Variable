@@ -6,7 +6,8 @@ Pvariable::Application.routes.draw do
 
   get 'about' => 'pages#about'
   # almost like hashing key => value
-  root :to => 'pages#home'
+  root :to => 'pins#index' 
+      # 'pages#home'
       #"controller/action"
 
       
