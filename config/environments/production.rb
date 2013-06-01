@@ -67,4 +67,19 @@ Pvariable::Application.configure do
 
   # Devise: In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Configuring Amazon S3 for paperclip file uploads
+  # Create amazon account, create bucket on S3 and set to US standard
+  # First is bucket name
+  # Access credentials --> get both access keys
+  # Delete entire string of env['aws_bucket']
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
+
 end
