@@ -73,6 +73,10 @@ Pvariable::Application.configure do
   # First is bucket name
   # Access credentials --> get both access keys
   # Delete entire string of env['aws_bucket']
+  # Do these in terminal: 
+    # $ heroku config:add AWS_BUCKET=your_bucket_name
+    # $ heroku config:add AWS_ACCESS_KEY_ID=your_access_key_id
+    # $ heroku config:add AWS_SECRET_ACCESS_KEY=your_secret_access_key
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
