@@ -1,8 +1,11 @@
 Pvariable::Application.routes.draw do
+  get "users/show"
+
   resources :pins
 
 
   devise_for :users
+  match 'users/:id' => 'users#show', as: :user
 
   get 'about' => 'pages#about'
   # almost like hashing key => value
